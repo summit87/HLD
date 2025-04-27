@@ -9,27 +9,3 @@ We can ask from above three question to drive the discussion
 
 
 
-Data Size
-Base 2 given to 3 significant figures.
-
-Bytes	Base 10	Base 2
-10³	1KB	1000B
-10⁴	10KB	9.766KiB
-10⁵	100KB	97.66KiB
-10⁶	1MB	976.6KiB
-0.954MiB
-10⁷	10MB	9.537MiB
-10⁸	100MB	95.37MiB
-10⁹	1GB	953.7MiB
-0.931GiB
-10¹⁰	10GB	9.313GiB
-10¹¹	100GB	93.13GiB
-10¹²	1TB	931.3GiB
-0.909TiB
-10¹³	10TB	9.095TiB
-10¹⁴	100TB	90.95TiB
-10¹⁵	1PB	909.5TiB
-0.888PiB
-
-
-

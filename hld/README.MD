@@ -53,7 +53,7 @@
         ---
 
         column name   |data type
-        ------------- | -------------æ
+        ------------- | -------------
         emai_id       | varchar(100) (10 byte)
         text          | varchar(100) (10 byte)
         sent_time     | datetime (5 byte)
@@ -78,11 +78,11 @@
             * TPS (Transaction per second) : 10M daily => 10M/ (24*60*60) => 1200 TPS 
 
             * Storage : 
-              total byte : 75 byte => for calculation we can assume total byte is 100 byte </br>, so 10M*100 => 10^10 => 10GB data every daylcllllll lvlVlll
-ll
-ll
-l
-   ll 
+              total byte : 75 byte => for calculation we can assume total byte is 100 byte </br>, so 10M*100 => 10^10 => 10GB data every day
+
+              for 5 year's => 10*365 ~=4TB*5 ~= 20TB of storage
+
+          * Similary we cancalculate for email and SMS notification
 
 
         
