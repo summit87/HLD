@@ -15,6 +15,9 @@
         mobile        | varchar(10) (10 byte)
         is_active     | tinyint (1 byte)
         create_ts     | datetime (5 byte)
+        opt_for_push  | tinyint
+        opt_for_email_notification | tinyint
+        opt_for_sms_notification | tinyint
         
 
         ##### device_info table
