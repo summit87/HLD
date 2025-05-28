@@ -109,8 +109,55 @@
 
 
 
-### News feed system
+### News feed system (HLD2)
 
+```
+1. User can post
+2. poste can be viwed by frends of the user
+
+API :
+  POST /user/post
+  GET /post/{postId}
+  
+
+Assumption :
+	1. Each user can have 5k freinds
+	2. The user who is logedin can view the notification about the post
+	3. User who is not logedin and active can view the post one user loggedin
+	4. User can do three post/day 
+	5. system have 500M user and daily active user 10% and 2% user use media along the text post
+	6. Text size is 500 byte
+	7. media size (image or video) is 1 MB
+
+
+Calculate TPS :
+	Since we know we 10% user are active at given point of time i.e 50M user are active
+	Since each user can do 3 post per day, so total post in one day is 50*3 : 150M 
+	TPS = (150/86400) ~= 1800 TPS
+
+Storage : 500 byte*50M ~= 25000M byte ~= 25*10^9 ~=25GB 
+Media storage ~= 50*0.02*3 => 3M => 3*10^6*10^6 => 3*10^12 => 3TB of media storage every day
+
+Since text store is very negligible as compared to media storage , so every day we will be storing 3TB data
+for one month 30*3 => 90TB, for year => 90*12 => 108TB , for 5 year => 540 TB
+
+Network bandwidth : Since TPS is 1800 and each message size 500 byte => 900000 => 900KB ~= 1MB/sec 
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+SQL DB schema :
+User DB
+	userId,userName,isActive
+post DB
+	UserId,postId,postText,media,time
+
+---
+
+1. User friend , we can store in GraphDB to find relationship b/w user and their friends
+2. We will be using cache to store the userId,postId,datatime
+3. We will notify the user freinds
+```
 
 
 
