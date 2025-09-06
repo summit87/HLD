@@ -54,5 +54,39 @@ Below mentioned point is the use case of sharded counter <br>
 
 
 
+## Master -  Master replication in distributed system
+#### Why we need this
+---
+    
+*   For highe availbility of application
 
+* When one of the region is down then in case of master to master replication <br> we can redirect user to availble region
 
+* We can achive the data durability
+
+* Every user can connect with there own master region, in that case we are <br> also reducting the latency of the system
+---
+#### Biggest challenge with Master to master replication is handling the wright conflicts. <br> There may be certain question as below
+
+* <b>How to avoid the write conflicts 
+* How to fix this </b>
+---
+
+* >How to avoid the write conflicts 
+
+    * Remove the master-master replication stratgey 
+    * Let's keep master-slave architecture and let master handle all the write and slave will handle all the read.<br> In case of master fail, then one of the slave becomes master and serve the master responsibility.
+    * To achive the highe availbility of the application , there should DR region of the primary region
+
+* > How to fix (If we are going with master to master architecture)
+
+    * We can add the timestamp in the transaction , when any write happening in already written data for the same key, then we will check which timestamp is greater. <br>
+    The timestamp which have greater value, will owner and update the 
+    transaction. <br>
+    
+         * <b>Couple of point on timestamp : </b> Timestamp should always come from source of origin of transaction. Timestamp should be independent of network drift.<br> If we will considering the timestamp which depends on the network, then in that case we may lossing the correct data.
+
+    * While writing , either DB should have write conflicts resolution strategy or we can implement in application (Not recomended)
+
+    * While reading , when application see conflict in the data , application should resolve and update the db and return to caller .
+    This strategy we call read repair
