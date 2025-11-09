@@ -9,3 +9,11 @@ We can ask from above three question to drive the discussion
 
 
 
+
+10 Key principal for system design
+1. Communicate efficiently
+2. Defined the scope of the problem with interviewer (Mean the scope should be minimum and get aggrement with interviwer) , this has to be done within 5 minute
+3. drawing the box and component involved in system design
+4. start with simple solution , i.e working solution which fullfill our requirement, do not try to optimise the component or solution. Do not add any extra feature 
+    which never asked by interviwer
+
