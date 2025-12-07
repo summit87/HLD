@@ -1,4 +1,4 @@
-### HLD_1.txt : Notofication system design : 
+#### HLD_1.txt : Notofication system design 
 ---
 #####  Design a notification system, any service can use this notification system to target the user </br> 1. Service can sent 10M push notification ,5M SMS notification and 2M email notification on daily </br> 2. Notification Service should also handle notification in batches </br> 3. Assume Service which uses notification , can sent 10K notification in batches
 ---
